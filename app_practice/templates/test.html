@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'test.css' %}">
+    <title>Test</title>
+</head>
+<body>
+    <div class="table_setup">
+        <table border="1">
+            <th>No.</th>
+            {% for heads in head %}
+            <th>{{heads}}</th>
+            {% endfor %}
+    
+            {% for item in car %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{item.id}}</td>
+                <td>{{item.car_company}}</td>
+                <td>{{item.car_company_name}}</td>
+                <td>{{item.release_date}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.fuel}}</td>
+                <td>{{item.system}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

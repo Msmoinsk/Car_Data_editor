@@ -1,0 +1,20 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% block head %}<link rel="stylesheet" href="{% static 'mystyle.css' %}">{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="topnav">
+        <a href="/">HOME</a> |  
+        <a href="/car_brand/">CAR BRAND</a> | 
+        {% block nav %}{% endblock %}
+    </div>
+    {% block body %} This Is master Page {% endblock %}
+</body>
+</html>

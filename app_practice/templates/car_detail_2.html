@@ -1,0 +1,34 @@
+{% extends "master_page.html" %}
+
+{% block title %}
+Car Details
+{% endblock %}
+
+{% block body %}
+{% load static %}
+{% comment %}
+In DJango if static need to loaded it should be loaded before uselike
+1.(% load static %) then ([% static %])
+{% endcomment %}
+<div class="mycard">
+    
+    <h1>{{car.0.car_company_name}}</h1>
+    <ul>
+        {% for car_details in car %}
+            <br>
+            <li>
+                <p>RELEASE : {{car_details.release_date}}</p>
+                <p>DATA : {{car_details.fuel}} -- {{car_details.system}}</p>
+                <p>INR : {{car_details.price}}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    
+</div>
+
+
+{% endblock %}
+
+{% block nav %}
+<a href="/car_brand/{{car_name}}" style="text-transform: uppercase;">{{car_name}}</a> | 
+{% endblock %}

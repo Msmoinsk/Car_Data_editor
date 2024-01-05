@@ -1,0 +1,17 @@
+{% extends "master_page.html" %}
+{% block title %}
+Car Brand
+{% endblock %}
+
+{% block body %} 
+
+<div class="mycard">
+    <h1>Car Brand</h1>
+    <ul>
+        {% for car in cars %}
+            <li onclick="window.location = '{{car}}/'">{{car}}</li>
+        {% endfor %}
+    </ul><br>
+</div>
+
+{% endblock %}

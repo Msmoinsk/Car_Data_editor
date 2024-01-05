@@ -1,0 +1,49 @@
+{% extends "master_page.html" %}
+{% block title %}
+Car Brand
+{% endblock %}
+
+{% block body %} 
+
+<div class="mycard">
+    <h1>Car Data Entry</h1>
+
+    <div class="setup">
+        <form action="/" method="post">{% csrf_token %}
+            <label for="Brand">Brand Name</label>
+            <input type="text" name="brand" id="" placeholder="enter brand" style="text-transform: capitalize;">
+            <label for="car_name">Car Name</label>
+            <input type="text" name="car_name" id="" placeholder="car name" style="text-transform: capitalize;">
+            <label for="date">Release date</label>
+            <input type="date" name="date_release" id="" placeholder="">
+            <label for="price">Price</label>
+            <input type="number" name="price" id="" placeholder="Price">
+            <label for="fuel">Choose a fuel: </label>
+
+            <select name="cars_fuel" id="fuel">
+              <option value="deseil">deseil</option>
+              <option value="Petrol">Petrol</option>
+              <option value="CNG">CNG</option>
+              <option value="electric">electric</option>
+            </select> 
+
+            
+            <label for="system">Choose a System: </label>
+
+            <select name="cars_system" id="system">
+              <option value="FWD">FWD</option>
+              <option value="AWD">AWD</option>
+              <option value="RWD">RWD</option>
+            </select> 
+
+            <button type="submit"><b>submit</b></button>
+          </form>
+          <div class="button-container">
+            <button onclick="window.location = 'car_brand/'"><b>Car Brand</b></button>
+            <button onclick="window.location = 'test_case/'"><b>test table</b></button> 
+          </div>
+    </div>
+
+    <br>
+</div>
+{% endblock %}
